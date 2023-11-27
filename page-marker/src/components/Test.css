@@ -1,0 +1,84 @@
+
+#pageMarker_draggable {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 12px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    display: block;
+    box-sizing: content-box !important;
+    line-height: 0.7 !important;
+    cursor: move !important;
+    height: 270px !important;
+    width: 80px !important;
+    background-color: rgb(255, 255, 255) !important;
+    z-index: 2147483647 !important;
+    user-select: none !important;
+    text-align: left !important;
+    letter-spacing: normal !important;
+    -webkit-font-smoothing: antialiased !important;
+    border-color: rgb(255, 255, 255) !important;
+    border-style: solid !important;
+    border-width: 5px !important;
+    border-radius: 10px !important;
+    margin: 20px !important;
+    padding: 4px !important;
+}
+
+.pageMarker_title {
+    color: rgb(128, 128, 128);
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 800;
+    user-select: none;
+    clear: none;
+    line-height: 0.7 !important;
+    font-family: Arial !important;
+    -webkit-font-smoothing: antialiased !important;
+    margin: 1px 0px 2px;
+}
+#pageMarker_color {
+    line-height: 0.7 !important;
+}
+#pageMarker_tools {
+    margin-bottom: 5px;
+    line-height: 0.7 !important;
+    display: block !important;
+    box-sizing: content-box !important;
+}
+
+.pageMarker_tool {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    box-sizing: content-box !important;
+    color: rgb(0, 0, 0) !important;
+    margin: 0px 5px 5px;
+    padding: 4px;
+    border-radius: 5px;
+    border-bottom: none !important;
+}
+#pageMarker_size {
+    line-height: 0.7 !important;
+}
+
+#pageMarker_thicknessSlider {
+    appearance: slider-horizontal;
+    line-height: 0.7 !important;
+    width: 95% !important;
+    display: block !important;
+    height: auto !important;
+    box-shadow: none !important;
+    box-sizing: content-box !important;
+    outline: none;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    padding: 3px;
+    border-radius: 5px;
+    background: rgb(215, 220, 223);
+    margin: 5px auto !important;
+    transition: none 0s ease 0s !important;
+}
+
