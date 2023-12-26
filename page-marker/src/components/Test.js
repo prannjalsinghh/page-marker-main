@@ -2,34 +2,42 @@ import React from "react";
 import "./Test.css";
 import SketchField from "./Canvas";
 import { useEffect } from 'react';
+import EraserPng from '../img/eraser-color-icon.svg';
 
-
-function Foreground() {
+function Foreground( {setCursorType}) {
 
   const [activeTool, setActiveTool] = React.useState("pen");
   const [activeToolThickness,setMarkerThickness] = React.useState({ pen: 5, eraser:10, highlighter:20});
-
   const [color, setColor] = React.useState("#000000");
   const [currThickness, setCurrThickness] = React.useState(5);
 
     useEffect(() => {
       if(activeTool === "pen"){
+        setCursorType('crosshair');
         let temp = activeToolThickness.pen;
         temp = temp*10 - 10;
         setCurrThickness(temp);
       }
       else if(activeTool === "highlighter"){
+        setCursorType(`url(${EraserPng}})`);
         let temp = activeToolThickness.highlighter;
         temp = temp*5 - 50;
         setCurrThickness(temp);
       }
       else if(activeTool === "eraser"){
+        setCursorType()
         let temp = activeToolThickness.eraser;
         temp = temp*4 - 20;
         setCurrThickness(temp);
       }
       else{
         setCurrThickness(5);
+      }
+      if(activeTool === "text"){
+        setCursorType('text');
+      }
+      if(activeTool === "pointer"  || activeTool === "save" || activeTool === "undo" || activeTool === "redo" || activeTool === "clear" || activeTool === "exit"){
+        setCursorType('default');
       }
     }, [activeTool])
     
@@ -88,6 +96,7 @@ function Foreground() {
                 style={{
                   background:
                     activeTool === "highlighter" ? "rgba(0, 0, 0, 0.2)" : "",
+                  
                 }}
               >
                 <img
@@ -106,6 +115,7 @@ function Foreground() {
                 style={{
                   background:
                     activeTool === "eraser" ? "rgba(0, 0, 0, 0.2)" : "",
+                    
                 }}
               >
                 <img
@@ -124,6 +134,7 @@ function Foreground() {
                 style={{
                   background:
                     activeTool === "pointer" ? "rgba(0, 0, 0, 0.2)" : "",
+                    
                 }}
               >
                 <img
@@ -141,6 +152,7 @@ function Foreground() {
                 onClick={(e) => setActiveTool("text")}
                 style={{
                   background: activeTool === "text" ? "rgba(0, 0, 0, 0.2)" : "",
+                  
                 }}
               >
                 <img
@@ -159,6 +171,7 @@ function Foreground() {
                 onClick={(e) => setActiveTool("save")}
                 style={{
                   background: activeTool === "save" ? "rgba(0, 0, 0, 0.2)" : "",
+                  
                 }}
               >
                 <img
@@ -177,6 +190,7 @@ function Foreground() {
                 style={{
                   background: activeTool === "undo" ? "rgba(0, 0, 0, 0.2)" : "",
                   opacity: 0.3,
+                  
                 }}
               >
                 <img
@@ -195,6 +209,7 @@ function Foreground() {
                 style={{
                   background: activeTool === "redo" ? "rgba(0, 0, 0, 0.2)" : "",
                   opacity: 0.3,
+                  
                 }}
               >
                 <img
@@ -213,6 +228,7 @@ function Foreground() {
                 style={{
                   background:
                     activeTool === "clear" ? "rgba(0, 0, 0, 0.2)" : "",
+                    
                 }}
               >
                 <img
@@ -230,6 +246,7 @@ function Foreground() {
                 onClick={(e) => setActiveTool("exit")}
                 style={{
                   background: activeTool === "exit" ? "rgba(0, 0, 0, 0.2)" : "",
+                  
                 }}
               >
                 <img
